@@ -108,7 +108,7 @@ export const forgotPassword = async (req, res) => {
     const token = jwt.sign({ _id: user.id }, process.env.JWT_SCRET_KEY, {
       expiresIn: "12hr", 
     });
-    const resetpassword = `https://forgot-password-node-js.netlify.app/reset-password/${user._id}/${token}`;
+    const resetpassword = `https://passwordresetnewflow.netlify.app/resetpassword/${user._id}/${token}`;
 
     const mailLink = await mail(user.email, "Reset Password" ,resetpassword); 
 
